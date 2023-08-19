@@ -18,7 +18,7 @@ class Service {
             throw IllegalArgumentException("Invalid Calendar Type")
         }
 
-        val birthday = Birthday(dob, calendarType)
+        val birthday = Birthday(dob)
         val honoree = Honoree(name ?: "", birthday)
         val user = User(relationship)
 
