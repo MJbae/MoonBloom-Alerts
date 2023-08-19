@@ -1,0 +1,82 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007BFF;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+input, select {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: border 0.3s;
+    box-sizing: border-box;
+    height: 35px;
+    background-color: #f9f9f9;
+}
+
+input:focus, select:focus {
+    border: none;
+    box-shadow: none;
+}
+
+button {
+    display: block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    height: 45px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.output {
+    margin-top: 50px;
+}
+
+.output h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}

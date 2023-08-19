@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonBloom Alerts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>MoonBloom Alerts</h1>
+
+    <div class="input-group">
+        <label for="calendarType">달력유형(필수):</label>
+        <select id="calendarType">
+            <option value="Lunar">음력</option>
+            <option value="Gregorian">양력</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="dob">생년월일(필수):</label>
+        <input type="date" id="dob">
+    </div>
+
+    <div class="input-group">
+        <label for="relationship">관계(필수):</label>
+        <select id="relationship">
+            <option value="Mother">엄마</option>
+            <option value="Father">아빠</option>
+            <option value="Grandma">할머니</option>
+            <option value="Grand">할아버지</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="name">이름(선택):</label>
+        <input type="text" id="name" placeholder="예: 김부자">
+    </div>
+
+    <button onclick="generateMessage()">메시지 생성</button>
+
+    <div class="output">
+        <h2>생성된 메시지:</h2>
+        <p id="message1"></p>
+        <p id="message2"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
