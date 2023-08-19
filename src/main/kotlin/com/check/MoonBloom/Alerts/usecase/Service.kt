@@ -1,16 +1,17 @@
 package com.check.MoonBloom.Alerts.usecase
 
 import com.check.MoonBloom.Alerts.model.*
+import org.springframework.stereotype.Service
 import java.time.LocalDate
 
-
+@Service
 class Service {
     private val messageFactory = MessageFactory()
 
     fun notifyBirthday(
         dob: LocalDate,
         calendarType: CalendarType,
-        relationship: String,
+        relationship: Relationship,
         name: String?
     ): String {
         if (calendarType != CalendarType.LUNAR && calendarType != CalendarType.GREGORIAN) {

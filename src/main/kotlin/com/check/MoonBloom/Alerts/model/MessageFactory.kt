@@ -6,9 +6,7 @@ class MessageFactory {
         val gregorianDate = honoree.birthday.gregorianDate().toString()
         val message = LunarMessage(honoree, user)
 
-        // Randomly choose between case1 and case2 for variety.
         if (Math.random() < 0.5) message.case1(lunarDate, gregorianDate)
-
         return message.case2(lunarDate, gregorianDate)
     }
 
@@ -16,9 +14,7 @@ class MessageFactory {
         val gregorianDate = honoree.birthday.gregorianDate().toString()
         val message = GregorianMessage(honoree, user)
 
-        // Randomly choose between case1 and case2 for variety.
         if (Math.random() < 0.5) return message.case1(gregorianDate)
-
         return message.case2(gregorianDate)
     }
 }
