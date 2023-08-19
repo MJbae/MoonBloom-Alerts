@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts
+package com.check.moonbloom
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

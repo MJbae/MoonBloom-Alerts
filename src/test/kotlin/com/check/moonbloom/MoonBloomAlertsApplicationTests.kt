@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts
+package com.check.moonbloom
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

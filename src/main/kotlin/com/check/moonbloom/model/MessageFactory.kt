@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts.model
+package com.check.moonbloom.model
 
 class MessageFactory {
     fun createLunar(honoree: Honoree, user: User): String {

@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts.model
+package com.check.moonbloom.model
 
 
 data class Honoree(val name: String, val birthday: Birthday)

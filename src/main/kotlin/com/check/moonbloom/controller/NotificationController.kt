@@ -1,8 +1,8 @@
-package com.check.MoonBloom.Alerts.controller
+package com.check.moonbloom.controller
 
-import com.check.MoonBloom.Alerts.model.CalendarType
-import com.check.MoonBloom.Alerts.model.Relationship
-import com.check.MoonBloom.Alerts.usecase.Service
+import com.check.moonbloom.model.CalendarType
+import com.check.moonbloom.model.Relationship
+import com.check.moonbloom.usecase.Service
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.time.LocalDate

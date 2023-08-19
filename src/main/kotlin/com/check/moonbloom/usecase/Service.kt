@@ -1,6 +1,6 @@
-package com.check.MoonBloom.Alerts.usecase
+package com.check.moonbloom.usecase
 
-import com.check.MoonBloom.Alerts.model.*
+import com.check.moonbloom.model.*
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 

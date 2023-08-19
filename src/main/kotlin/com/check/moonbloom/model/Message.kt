@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts.model
+package com.check.moonbloom.model
 
 class LunarMessage(private val honoree: Honoree, private val user: User) {
 

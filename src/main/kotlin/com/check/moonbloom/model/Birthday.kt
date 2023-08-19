@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts.model
+package com.check.moonbloom.model
 
 import java.time.LocalDate
 
@@ -11,7 +11,6 @@ class Birthday(val date: LocalDate, private val calendarType: CalendarType) {
     }
 
     private fun convertLunarToGregorian(): LocalDate {
-        // Placeholder logic; in reality, the conversion is more complex.
         return date.plusDays(29)
     }
 }

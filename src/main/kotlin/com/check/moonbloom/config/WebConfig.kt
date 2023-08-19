@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts.config
+package com.check.moonbloom.config
 
 
 import org.springframework.context.annotation.Configuration

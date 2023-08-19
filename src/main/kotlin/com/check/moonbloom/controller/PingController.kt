@@ -1,4 +1,4 @@
-package com.check.MoonBloom.Alerts.controller
+package com.check.moonbloom.controller
 
 
 import org.springframework.web.bind.annotation.GetMapping
