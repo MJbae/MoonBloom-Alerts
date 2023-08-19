@@ -17,23 +17,29 @@
     <div class="input-group">
         <label for="calendarType">달력유형(필수):</label>
         <select id="calendarType">
-            <option value="Lunar">음력</option>
-            <option value="Gregorian">양력</option>
+            <option value="LUNAR">음력</option>
+            <option value="GREGORIAN">양력</option>
         </select>
     </div>
 
     <div class="input-group">
-        <label for="dob">생년월일(필수):</label>
+        <label for="dob">생신(필수):</label>
         <input type="date" id="dob">
     </div>
 
     <div class="input-group">
         <label for="relationship">관계(필수):</label>
         <select id="relationship">
-            <option value="Mother">엄마</option>
-            <option value="Father">아빠</option>
-            <option value="Grandma">할머니</option>
-            <option value="Grand">할아버지</option>
+            <option value="MOTHER">엄마</option>
+            <option value="FATHER">아빠</option>
+            <option value="GRANDMA">할머니</option>
+            <option value="GRANDPA">할아버지</option>
+            <option value="BROTHER">형제</option>
+            <option value="SISTER">자매</option>
+            <option value="UNCLE">삼촌</option>
+            <option value="AUNT">숙모</option>
+            <option value="COUSIN">사촌</option>
+            <option value="OTHER">기타</option>
         </select>
     </div>
 
@@ -42,17 +48,20 @@
         <input type="text" id="name" placeholder="예: 김부자">
     </div>
 
-    <button onclick="generateMessage()">메시지 생성</button>
+    <button onclick="fetchMessage()">메시지 생성</button>
 
     <div class="output">
         <h2>생성된 메시지:</h2>
-        <p id="message1"></p>
-        <p id="message2"></p>
+        <p id="message"></p>
     </div>
 </div>
 
 <script src="script.js"></script>
-
+<script>
+    // Set the default date to today's date
+    let today = new Date().toISOString().split('T')[0];
+    document.getElementById('dob').value = today;
+</script>
 </body>
 
 </html>
