@@ -32,24 +32,37 @@ label {
     margin-right: 20px;
     font-weight: 500;
     font-size: 18px;
+    width: 120px;
 }
 
 input, select {
     flex: 1;
-    padding: 10px 15px;
-    border: none;
+    padding: 12px 30px 12px 20px;
+    border: 1px solid #e0e0e0;
     border-radius: 5px;
     font-size: 18px;
     outline: none;
-    transition: border 0.3s;
+    transition: all 0.3s ease;
     box-sizing: border-box;
-    height: 35px;
+    height: 45px;
     background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    appearance: none;
 }
 
-input:focus, select:focus {
-    border: none;
-    box-shadow: none;
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#007BFF" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g><path d="M484.536,133.896c-5.12-5.12-12.28-7.9-19.14-7.9c-6.872,0-14.024,2.78-19.152,7.9L245.884,341.33L45.756,133.896 C40.64,128.776,33.468,126,26.6,126c-6.872,0-14.028,2.776-19.148,7.9c-10.24,10.24-10.24,26.76,0,36.996 l225.884,225.896c5.124,5.124,12.284,7.896,19.144,7.896s14.02-2.772,19.148-7.896L484.536,170.892 C494.776,160.656,494.776,144.136,484.536,133.896z"/></g></g></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: relative;
+    top: 3px; /* Adjust as necessary */
 }
 
 button {
