@@ -28,7 +28,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.github.usingsky:KoreanLunarCalendar:0.3.1")
-    runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
+    implementation("mysql:mysql-connector-java:8.0.28")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

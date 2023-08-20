@@ -1,14 +1,18 @@
 package com.check.moonbloom.model
 
 import com.github.usingsky.calendar.KoreanLunarCalendar
+import jakarta.persistence.*
 import java.time.LocalDate
 
-
-class Birthday(
+@Embeddable
+data class Birthday(
     private val date: LocalDate,
+
+    @Enumerated(EnumType.STRING)
     val type: CalendarType
 ) {
-    private var lunarConverter = KoreanLunarCalendar.getInstance()
+    @Transient
+    private val lunarConverter = KoreanLunarCalendar.getInstance()
 
     internal fun lunar(): LocalDate {
         if (type == CalendarType.LUNAR) return thisBirthday(date)

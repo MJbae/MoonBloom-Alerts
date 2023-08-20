@@ -1,23 +1,21 @@
 package com.check.moonbloom.model
 
-import java.time.LocalDate
+import jakarta.persistence.*
 
-
-data class Honoree(val name: String, private val birthday: Birthday) {
-    val lunarBirthday: LocalDate
-        get() = birthday.lunar()
-
-    val gregorianBirthday: LocalDate
-        get() = birthday.gregorian()
-
-    val birthdayType: CalendarType
-        get() = birthday.type
-}
-
-data class User(
-    val number: PhoneNo,
-    val relationship: Relationship
+@Entity
+class User(
+    @Embedded
+    @AttributeOverride(name = "number", column = Column(name = "phone_no", unique = true))
+    val number: PhoneNo
 ) {
+    @Id
+    @TableGenerator(name = "userIdGenerator", table = "sequence", allocationSize = 100)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "userIdGenerator")
+    var id: Long? = null
+
+    @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], orphanRemoval = true)
+    private val honorees: MutableSet<Honoree> = mutableSetOf()
+
     val phoneNo: String
         get() = number.toString()
 }
@@ -39,6 +37,7 @@ enum class Relationship(private val inKorean: String) {
     }
 }
 
+@Embeddable
 data class PhoneNo(
     private val number: String
 ) {
