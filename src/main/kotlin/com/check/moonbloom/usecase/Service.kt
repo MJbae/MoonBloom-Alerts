@@ -6,8 +6,6 @@ import java.time.LocalDate
 
 @Service
 class Service {
-    private val messageFactory = MessageFactory()
-
     fun notifyBirthday(
         dob: LocalDate,
         calendarType: CalendarType,
@@ -18,11 +16,10 @@ class Service {
             throw IllegalArgumentException("Invalid Calendar Type")
         }
 
-        val birthday = Birthday(dob)
+        val birthday = Birthday(dob, calendarType)
         val honoree = Honoree(name ?: "", birthday)
         val user = User(relationship)
 
-        if (calendarType == CalendarType.GREGORIAN) return messageFactory.createGregorian(honoree, user)
-        return messageFactory.createLunar(honoree, user)
+        return InstantMessage(honoree, user).txt()
     }
 }

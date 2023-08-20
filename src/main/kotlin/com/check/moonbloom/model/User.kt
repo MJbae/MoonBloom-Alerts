@@ -1,7 +1,18 @@
 package com.check.moonbloom.model
 
+import java.time.LocalDate
 
-data class Honoree(val name: String, val birthday: Birthday)
+
+data class Honoree(val name: String, private val birthday: Birthday) {
+    val lunarBirthday: LocalDate
+        get() = birthday.lunar()
+
+    val gregorianBirthday: LocalDate
+        get() = birthday.gregorian()
+
+    val birthdayType: CalendarType
+        get() = birthday.type
+}
 data class User(val relationship: Relationship)
 
 enum class Relationship(private val inKorean: String) {
