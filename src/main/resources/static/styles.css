@@ -6,18 +6,18 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #F8F8FF; /* Ghost White */
     padding: 30px;
     border-radius: 10px;
     max-width: 600px;
     margin: 40px auto;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px rgba(70, 130, 180, 0.1); /* Steel Blue shadow */
 }
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #FF69B4; /* Hot Pink color */
+    color: #4682B4; /* Steel Blue */
     font-weight: bold;
     letter-spacing: 1.5px;
     font-size: 28px;
@@ -25,14 +25,14 @@ h1 {
 
 .intro {
     font-size: 20px;
-    color: #FF69B4;
+    color: #4682B4; /* Steel Blue */
     text-align: center;
     margin: 30px 0;
     font-weight: 500;
     padding: 15px;
     border-radius: 10px;
-    background-color: #fdeff5;
-    box-shadow: 0px 0px 20px rgba(255, 105, 180, 0.15);
+    background-color: #DCECFF; /* Very light blue */
+    box-shadow: 0px 0px 20px rgba(70, 130, 180, 0.15); /* Steel Blue shadow */
 }
 
 .input-group {
@@ -43,9 +43,9 @@ h1 {
 }
 
 .required {
-    color: #FF0000; /* Red color */
-    font-size: 1.2em; /* 120% of the current font size */
-    margin-left: 5px; /* Add a bit of spacing between the label text and the asterisk */
+    color: #B22222; /* FireBrick Red for a more subtle look */
+    font-size: 1.2em;
+    margin-left: 5px;
 }
 
 label {
@@ -57,31 +57,31 @@ label {
 input, select {
     width: 100%;
     padding: 12px 30px 12px 20px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #B0C4DE; /* Light Steel Blue */
     border-radius: 5px;
     font-size: 18px;
     outline: none;
     transition: all 0.3s ease;
     box-sizing: border-box;
     height: 45px;
-    background-color: #f9f9f9;
+    background-color: #E6F3FF; /* Light blue */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     appearance: none;
 }
 
 select {
-    background-image: url('data:image/svg+xml;utf8,<svg fill="#FF69B4" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g><path d="M484.536,133.896c-5.12-5.12-12.28-7.9-19.14-7.9c-6.872,0-14.024,2.78-19.152,7.9L245.884,341.33L45.756,133.896 C40.64,128.776,33.468,126,26.6,126c-6.872,0-14.028,2.776-19.148,7.9c-10.24,10.24-10.24,26.76,0,36.996 l225.884,225.896c5.124,5.124,12.284,7.896,19.144,7.896s14.02-2.772,19.148-7.896L484.536,170.892 C494.776,160.656,494.776,144.136,484.536,133.896z"/></g></g></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#4682B4" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g><path d="M484.536,133.896c-5.12-5.12-12.28-7.9-19.14-7.9c-6.872,0-14.024,2.78-19.152,7.9L245.884,341.33L45.756,133.896 C40.64,128.776,33.468,126,26.6,126c-6.872,0-14.028,2.776-19.148,7.9c-10.24,10.24-10.24,26.76,0,36.996 l225.884,225.896c5.124,5.124,12.284,7.896,19.144,7.896s14.02-2.772,19.148-7.896L484.536,170.892 C494.776,160.656,494.776,144.136,484.536,133.896z"/></g></g></svg>');
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
 
 button {
     display: block;
-    background-color: #FFB6C1; /* Light Pink color */
+    background-color: #B0C4DE; /* Light Steel Blue */
     color: #fff;
     padding: 12px 15px;
     border: none;
-    border-radius: 50px; /* Rounded button for a softer appearance */
+    border-radius: 50px;
     margin-top: 60px;
     cursor: pointer;
     width: 100%;
@@ -91,15 +91,13 @@ button {
 }
 
 button:enabled {
-    background-color: #FF69B4;
+    background-color: #4682B4; /* Steel Blue */
 }
-
 
 .output {
     margin-top: 50px;
 }
 
-/* Mobile Styles */
 @media only screen and (max-width: 768px) {
     h1 {
         font-size: 20px;

@@ -5,20 +5,19 @@ function isValidPhoneNumber(phoneNo) {
 
 function checkMandatoryFields() {
     let dob = document.getElementById("dob").value;
-    let calendarType = document.getElementById("calendarType").value;
     let relationship = document.getElementById("relationship").value;
     let phoneNo = document.getElementById("phoneNo").value;
     let name = document.getElementById("name").value;
 
     const button = document.querySelector("button");
-    if (dob && calendarType && relationship && name && isValidPhoneNumber(phoneNo)) {
+    if (dob && relationship && name && isValidPhoneNumber(phoneNo)) {
         button.disabled = false;
     } else {
         button.disabled = true;
     }
 }
 
-["dob", "calendarType", "relationship", "phoneNo", "name"].forEach(id => {
+["dob", "relationship", "phoneNo", "name"].forEach(id => {
     document.getElementById(id).addEventListener('input', checkMandatoryFields);
 });
 
@@ -26,12 +25,11 @@ document.querySelector("button").disabled = true;
 
 function fetchMessage() {
     let dob = document.getElementById("dob").value;
-    let calendarType = document.getElementById("calendarType").value;
     let relationship = document.getElementById("relationship").value;
     let phoneNo = document.getElementById("phoneNo").value;
     let name = document.getElementById("name").value;
 
-    if (!dob || !calendarType || !relationship || !name || !isValidPhoneNumber(phoneNo)) {
+    if (!dob || !relationship || !name || !isValidPhoneNumber(phoneNo)) {
         alert("모든 필수 입력 사항을 완료해주세요!");
         return;
     }
@@ -43,7 +41,6 @@ function fetchMessage() {
         },
         body: JSON.stringify({
             dob: dob,
-            calendarType: calendarType,
             relationship: relationship,
             name: name,
             phoneNo: phoneNo

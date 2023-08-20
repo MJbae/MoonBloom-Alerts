@@ -4,7 +4,10 @@ import com.github.usingsky.calendar.KoreanLunarCalendar
 import java.time.LocalDate
 
 
-class Birthday(private val date: LocalDate, val type: CalendarType) {
+class Birthday(
+    private val date: LocalDate,
+    val type: CalendarType
+) {
     private var lunarConverter = KoreanLunarCalendar.getInstance()
 
     internal fun lunar(): LocalDate {

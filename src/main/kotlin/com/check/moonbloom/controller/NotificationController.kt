@@ -17,20 +17,20 @@ class NotificationController(
     @PostMapping("/notifications")
     fun notify(@RequestBody req: NotificationRequest): MessageDto {
         return service.notifyBirthday(
-            phoneNo = req.phoneNo,
             dob = req.dob,
-            calendarType = req.calendarType,
+            name = req.name,
+            phoneNo = req.phoneNo,
             relationship = req.relationship,
-            name = req.name
+            calendarType = req.calendarType ?: CalendarType.LUNAR
         )
     }
 }
 
 
 data class NotificationRequest(
+    val calendarType: CalendarType?,
     val phoneNo: String,
     val dob: LocalDate,
-    val calendarType: CalendarType,
     val relationship: Relationship,
     val name: String
 )

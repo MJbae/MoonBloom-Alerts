@@ -9,16 +9,12 @@ class NotificationService {
 
     // @Transactional(readonly=true)
     fun notifyBirthday(
+        calendarType: CalendarType,
         phoneNo: String,
         dob: LocalDate,
-        calendarType: CalendarType,
         relationship: Relationship,
         name: String
     ): MessageDto {
-        if (calendarType != CalendarType.LUNAR && calendarType != CalendarType.GREGORIAN) {
-            throw IllegalArgumentException("Invalid Calendar Type")
-        }
-
         val birthday = Birthday(dob, calendarType)
         val honoree = Honoree(name, birthday)
         val user = User(PhoneNo(phoneNo), relationship)
