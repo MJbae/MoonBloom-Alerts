@@ -16,17 +16,17 @@
     <h1>MoonBloom Alerts</h1>
 
     <div class="intro">
-        <p>사랑하는 분의 음력 생일을 양력으로 바꿔드려요. 🌙✨</p>
-        <p>생일을 준비하실 수 있도록 메시지로 알려드릴게요. 💖</p>
+        <p>사랑하는 분의 음력 생신을 양력으로 바꿔드려요. 🌙✨</p>
+        <p>특별한 날을 준비하실 수 있도록 메시지로 알려드릴게요. 💖</p>
     </div>
 
     <div class="input-group">
-        <label for="phoneNo">전화번호(필수):</label>
-        <input type="tel" id="phoneNo" placeholder="예: 010-1234-5678">
+        <label for="phoneNo">전화번호<span class="required">*</span></label>
+        <input type="tel" id="phoneNo" placeholder="ex) 01012345678" pattern="01[016789]\d{6,8}" title="올바른 전화번호를 입력해주세요.">
     </div>
 
     <div class="input-group">
-        <label for="calendarType">달력유형(필수):</label>
+        <label for="calendarType">달력유형<span class="required">*</span></label>
         <select id="calendarType">
             <option value="LUNAR">음력</option>
             <option value="GREGORIAN">양력</option>
@@ -34,12 +34,12 @@
     </div>
 
     <div class="input-group">
-        <label for="dob">생년월일(필수):</label>
+        <label for="dob">생년월일<span class="required">*</span></label>
         <input type="date" id="dob">
     </div>
 
     <div class="input-group">
-        <label for="relationship">관계(필수):</label>
+        <label for="relationship">관계<span class="required">*</span></label>
         <select id="relationship">
             <option value="MOTHER">엄마</option>
             <option value="FATHER">아빠</option>
@@ -55,11 +55,11 @@
     </div>
 
     <div class="input-group">
-        <label for="name">이름(선택):</label>
-        <input type="text" id="name" placeholder="예: 김부자">
+        <label for="name">이름<span class="required">*</span></label>
+        <input type="text" id="name" placeholder="ex) 김부자">
     </div>
 
-    <button onclick="fetchMessage()">완료</button>
+    <button onclick="fetchMessage()" disabled>완료</button>
 
     <div class="output">
         <p id="message"></p>

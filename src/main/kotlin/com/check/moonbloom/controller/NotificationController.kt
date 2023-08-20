@@ -32,5 +32,5 @@ data class NotificationRequest(
     val dob: LocalDate,
     val calendarType: CalendarType,
     val relationship: Relationship,
-    val name: String?
+    val name: String
 )

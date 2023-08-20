@@ -39,9 +39,9 @@ enum class Relationship(private val inKorean: String) {
     }
 }
 
-data class PhoneNo(private val rawNumber: String) {
-    private val number = rawNumber.replace("-", "")
-
+data class PhoneNo(
+    private val number: String
+) {
     override fun toString(): String {
         return "${number.substring(0, 3)}-${number.substring(3, 7)}-${number.substring(7, 11)}"
     }

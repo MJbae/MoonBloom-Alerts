@@ -11,14 +11,14 @@ class Service {
         dob: LocalDate,
         calendarType: CalendarType,
         relationship: Relationship,
-        name: String?
+        name: String
     ): MessageDto {
         if (calendarType != CalendarType.LUNAR && calendarType != CalendarType.GREGORIAN) {
             throw IllegalArgumentException("Invalid Calendar Type")
         }
 
         val birthday = Birthday(dob, calendarType)
-        val honoree = Honoree(name ?: "", birthday)
+        val honoree = Honoree(name, birthday)
         val user = User(PhoneNo(phoneNo), relationship)
 
         return MessageDto(
