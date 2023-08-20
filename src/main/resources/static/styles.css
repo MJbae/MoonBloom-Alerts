@@ -17,14 +17,17 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #007BFF;
+    color: #FF69B4; /* Hot Pink color */
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 28px;
 }
 
 .intro {
     font-size: 20px;
     color: #FF69B4;
     text-align: center;
-    margin: 20px 0;
+    margin: 30px 0;
     font-weight: 500;
     padding: 15px;
     border-radius: 10px;
@@ -61,19 +64,19 @@ input, select {
 }
 
 select {
-    background-image: url('data:image/svg+xml;utf8,<svg fill="#007BFF" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g><path d="M484.536,133.896c-5.12-5.12-12.28-7.9-19.14-7.9c-6.872,0-14.024,2.78-19.152,7.9L245.884,341.33L45.756,133.896 C40.64,128.776,33.468,126,26.6,126c-6.872,0-14.028,2.776-19.148,7.9c-10.24,10.24-10.24,26.76,0,36.996 l225.884,225.896c5.124,5.124,12.284,7.896,19.144,7.896s14.02-2.772,19.148-7.896L484.536,170.892 C494.776,160.656,494.776,144.136,484.536,133.896z"/></g></g></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#FF69B4" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve"><g><g><path d="M484.536,133.896c-5.12-5.12-12.28-7.9-19.14-7.9c-6.872,0-14.024,2.78-19.152,7.9L245.884,341.33L45.756,133.896 C40.64,128.776,33.468,126,26.6,126c-6.872,0-14.028,2.776-19.148,7.9c-10.24,10.24-10.24,26.76,0,36.996 l225.884,225.896c5.124,5.124,12.284,7.896,19.144,7.896s14.02-2.772,19.148-7.896L484.536,170.892 C494.776,160.656,494.776,144.136,484.536,133.896z"/></g></g></svg>');
     background-repeat: no-repeat;
     background-position: right 10px center;
 }
 
 button {
     display: block;
-    background-color: #007BFF;
+    background-color: #FFB6C1; /* Light Pink color */
     color: #fff;
     padding: 12px 15px;
     border: none;
-    border-radius: 5px;
-    margin-top: 30px;
+    border-radius: 50px; /* Rounded button for a softer appearance */
+    margin-top: 60px;
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s;
@@ -82,7 +85,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #FF69B4; /* Hot Pink color on hover */
 }
 
 .output {
