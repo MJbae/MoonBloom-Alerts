@@ -1,7 +1,7 @@
 package com.check.moonbloom.model
 
 
-class SendingMessage(private val honoree: Honoree, private val user: User) {
+data class SendingMessage(private val honoree: Honoree, private val user: User) {
 
     fun txt(): String {
         if (honoree.birthdayType == CalendarType.LUNAR) return lunarMsg()

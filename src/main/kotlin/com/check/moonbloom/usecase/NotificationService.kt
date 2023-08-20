@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service
 import java.time.LocalDate
 
 @Service
-class Service {
+class NotificationService {
+
+    // @Transactional(readonly=true)
     fun notifyBirthday(
         phoneNo: String,
         dob: LocalDate,
@@ -20,6 +22,8 @@ class Service {
         val birthday = Birthday(dob, calendarType)
         val honoree = Honoree(name, birthday)
         val user = User(PhoneNo(phoneNo), relationship)
+
+        // TODO: save birthday, honoree, user
 
         return MessageDto(
             msg = InstantMessage(honoree, user).toString(),
