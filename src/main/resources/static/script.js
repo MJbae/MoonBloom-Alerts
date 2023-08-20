@@ -18,24 +18,20 @@ function checkMandatoryFields() {
     }
 }
 
-
-// Attach event listeners to input fields
 ["dob", "calendarType", "relationship", "phoneNo", "name"].forEach(id => {
     document.getElementById(id).addEventListener('input', checkMandatoryFields);
 });
 
-// Disable the button initially
 document.querySelector("button").disabled = true;
-
 
 function fetchMessage() {
     let dob = document.getElementById("dob").value;
     let calendarType = document.getElementById("calendarType").value;
     let relationship = document.getElementById("relationship").value;
-    let name = document.getElementById("name").value;
     let phoneNo = document.getElementById("phoneNo").value;
+    let name = document.getElementById("name").value;
 
-    if (!dob || !calendarType || !relationship || !isValidPhoneNumber(phoneNo)) {
+    if (!dob || !calendarType || !relationship || !name || !isValidPhoneNumber(phoneNo)) {
         alert("모든 필수 입력 사항을 완료해주세요!");
         return;
     }
@@ -53,9 +49,8 @@ function fetchMessage() {
             phoneNo: phoneNo
         })
     })
-    .then(response => response.json())  // Since we're expecting JSON from server
+    .then(response => response.json())
     .then(data => {
-        // Redirect to the new page with the message as a query parameter
         window.location.href = `result.html?msg=${encodeURIComponent(data.msg)}&phoneNo=${encodeURIComponent(data.phoneNo)}`;
     })
     .catch((error) => {

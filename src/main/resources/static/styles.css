@@ -90,9 +90,10 @@ button {
     font-size: 18px;
 }
 
-button:hover {
-    background-color: #FF69B4; /* Hot Pink color on hover */
+button:enabled {
+    background-color: #FF69B4;
 }
+
 
 .output {
     margin-top: 50px;
