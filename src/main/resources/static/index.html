@@ -15,6 +15,15 @@
 <div class="container">
     <h1>MoonBloom Alerts</h1>
 
+    <div class="intro">
+        <p>MoonBloom Alerts는 사랑하는 이들의 음력 생일을 기억하고 축하하는 데 도움을 주는 서비스입니다. 음력 날짜를 양력 날짜로 변환하고 적시에 알림을 제공함으로써, 특별한 날을 더욱 풍성하게 만들어줍니다.</p>
+    </div>
+
+    <div class="input-group">
+        <label for="phone">전화번호(필수):</label>
+        <input type="tel" id="phone" placeholder="예: 010-1234-5678">
+    </div>
+
     <div class="input-group">
         <label for="calendarType">달력유형(필수):</label>
         <select id="calendarType">
@@ -49,7 +58,7 @@
         <input type="text" id="name" placeholder="예: 김부자">
     </div>
 
-    <button onclick="fetchMessage()">완료</button>
+    <button onclick="fetchMessage()">메시지 생성</button>
 
     <div class="output">
         <p id="message"></p>
