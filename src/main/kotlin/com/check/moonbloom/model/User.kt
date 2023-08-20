@@ -1,9 +1,13 @@
 package com.check.moonbloom.model
 
 import jakarta.persistence.*
+import java.util.*
 
 @Entity
 class User(
+    @Embedded
+    @AttributeOverride(name = "userId", column = Column(name = "userId", unique = true, length = 40))
+    val userId: UserId,
     @Embedded
     @AttributeOverride(name = "number", column = Column(name = "phone_no", unique = true))
     val number: PhoneNo
@@ -18,6 +22,10 @@ class User(
 
     val phoneNo: String
         get() = number.toString()
+
+    fun join(honoree: Honoree) {
+        honorees.add(honoree)
+    }
 }
 
 enum class Relationship(private val inKorean: String) {
@@ -35,6 +43,19 @@ enum class Relationship(private val inKorean: String) {
     override fun toString(): String {
         return inKorean
     }
+}
+
+@Embeddable
+data class UserId(
+    private val userId: String
+) {
+    override fun toString(): String {
+        return this.userId
+    }
+}
+
+object UniqueIdMaker {
+    fun id() = UUID.randomUUID().toString().replace("-", "")
 }
 
 @Embeddable

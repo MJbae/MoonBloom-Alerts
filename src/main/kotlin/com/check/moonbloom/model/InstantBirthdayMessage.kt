@@ -1,6 +1,6 @@
 package com.check.moonbloom.model
 
-data class InstantMessage(private val honoree: Honoree) {
+data class InstantBirthdayMessage(private val honoree: Honoree) {
 
     override fun toString(): String {
         if (honoree.birthdayType == CalendarType.LUNAR) return lunarMsg()
@@ -12,5 +12,4 @@ data class InstantMessage(private val honoree: Honoree) {
 
     private fun gregorianMsg() =
         "올해 ${honoree.relationship}의 생신은 ${honoree.gregorianBirthday}이에요! 🎂💖"
-
 }

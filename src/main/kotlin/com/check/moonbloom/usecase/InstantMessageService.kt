@@ -6,24 +6,28 @@ import org.springframework.transaction.annotation.Transactional
 import java.time.LocalDate
 
 @Service
-class NotificationService {
+class InstantMessageService(
+    private val userRepository: UserRepository
+) {
 
-     @Transactional
-    fun notifyBirthday(
+    @Transactional
+    fun sendInstantMsg(
         calendarType: CalendarType,
         phoneNo: String,
         dob: LocalDate,
         relationship: Relationship,
         name: String
     ): MessageDto {
-        val birthday = Birthday(dob, calendarType)
-        val user = User(PhoneNo(phoneNo))
-        val honoree = Honoree(user, name, birthday, relationship)
+        val user = User(UserId(UniqueIdMaker.id()), PhoneNo(phoneNo))
+        val honoree = Honoree(user, name, Birthday(dob, calendarType), relationship)
 
-        // TODO: save birthday, honoree, user
+        user.join(honoree)
+        userRepository.save(user)
+
+        val message = InstantBirthdayMessage(honoree)
 
         return MessageDto(
-            msg = InstantMessage(honoree).toString(),
+            msg = message.toString(),
             phoneNo = user.phoneNo
         )
     }
