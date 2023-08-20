@@ -18,8 +18,8 @@ function fetchMessage() {
     })
     .then(response => response.text())
     .then(data => {
-        data = data.replace(/\n/g, '<br>');
-        document.getElementById("message").innerHTML = data;
+        // Redirect to the new page with the message as a query parameter
+        window.location.href = `result.html?msg=${encodeURIComponent(data)}`;
     })
     .catch((error) => {
         console.error('Error:', error);
