@@ -24,11 +24,11 @@ class InstantMessageService(
         user.join(honoree)
         userRepository.save(user)
 
-        val message = InstantBirthdayMessage(honoree)
+        val message = InstantMessage(honoree)
 
         return MessageDto(
             msg = message.toString(),
-            phoneNo = user.phoneNo
+            phoneNo = user.phoneNoInDash
         )
     }
 }

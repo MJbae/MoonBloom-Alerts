@@ -23,6 +23,10 @@ class User(
     val phoneNo: String
         get() = number.toString()
 
+
+    val phoneNoInDash: String
+        get() = number.withDash()
+
     fun join(honoree: Honoree) {
         honorees.add(honoree)
     }
@@ -63,6 +67,10 @@ data class PhoneNo(
     private val number: String
 ) {
     override fun toString(): String {
+        return number
+    }
+
+    fun withDash(): String {
         return "${number.substring(0, 3)}-${number.substring(3, 7)}-${number.substring(7, 11)}"
     }
 }

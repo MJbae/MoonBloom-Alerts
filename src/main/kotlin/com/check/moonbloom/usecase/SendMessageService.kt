@@ -1,17 +1,22 @@
 package com.check.moonbloom.usecase
 
-import com.check.moonbloom.model.MessageSender
+import com.check.moonbloom.model.Birthday
+import com.check.moonbloom.model.CalendarType
+import com.check.moonbloom.model.Honoree
+import com.check.moonbloom.model.HonoreeRepository
 import org.springframework.stereotype.Service
+import java.time.LocalDate
 
 @Service
 class SendMessageService(
-    private val messageSender: MessageSender
+    private val honoreeRepository: HonoreeRepository,
+    private val smsService: NaverSmsService
 ) {
-    // @Transactional(readonly=true)
     fun send() {
-        // TODO: load all birthday which have before 1week from now.
-        //  Load honoree and user too
-        //  val msg = SendingMessage(honoree, user)
-        //  Send msg with smsSender
+        val dayBeforeWeek = LocalDate.now().minusWeeks(1)
+        val targetBirthday = Birthday(dayBeforeWeek, CalendarType.LUNAR)
+        val honorees: Set<Honoree> = honoreeRepository.list(targetBirthday)
+
+        honorees.forEach { smsService.send(it) }
     }
 }
