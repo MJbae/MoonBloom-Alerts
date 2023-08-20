@@ -1,6 +1,5 @@
 package com.check.moonbloom.controller
 
-import com.check.moonbloom.usecase.NotificationService
 import com.check.moonbloom.usecase.SendMessageService
 import org.slf4j.LoggerFactory
 import org.springframework.scheduling.annotation.Scheduled

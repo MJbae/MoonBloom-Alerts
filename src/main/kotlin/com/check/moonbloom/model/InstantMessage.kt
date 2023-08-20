@@ -1,6 +1,6 @@
 package com.check.moonbloom.model
 
-class InstantMessage(private val honoree: Honoree, private val user: User) {
+data class InstantMessage(private val honoree: Honoree, private val user: User) {
 
     override fun toString(): String {
         if (honoree.birthdayType == CalendarType.LUNAR) return lunarMsg()
