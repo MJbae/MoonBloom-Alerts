@@ -15,6 +15,7 @@ class WebConfig : WebMvcConfigurer {
         registry.addMapping("/**")
             .allowedOriginPatterns(
                 "http://localhost:8080",
+                "https://moonbloom.check-ki.com",
             )
             .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS")
             .allowedHeaders("*")

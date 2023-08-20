@@ -7,19 +7,28 @@ import java.time.LocalDate
 @Service
 class Service {
     fun notifyBirthday(
+        phoneNo: String,
         dob: LocalDate,
         calendarType: CalendarType,
         relationship: Relationship,
         name: String?
-    ): String {
+    ): MessageDto {
         if (calendarType != CalendarType.LUNAR && calendarType != CalendarType.GREGORIAN) {
             throw IllegalArgumentException("Invalid Calendar Type")
         }
 
         val birthday = Birthday(dob, calendarType)
         val honoree = Honoree(name ?: "", birthday)
-        val user = User(relationship)
+        val user = User(PhoneNo(phoneNo), relationship)
 
-        return InstantMessage(honoree, user).txt()
+        return MessageDto(
+            msg = InstantMessage(honoree, user).toString(),
+            phoneNo = user.phoneNo
+        )
     }
 }
+
+data class MessageDto(
+    val msg: String,
+    val phoneNo: String
+)

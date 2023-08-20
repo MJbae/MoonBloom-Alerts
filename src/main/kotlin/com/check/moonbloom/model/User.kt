@@ -13,7 +13,14 @@ data class Honoree(val name: String, private val birthday: Birthday) {
     val birthdayType: CalendarType
         get() = birthday.type
 }
-data class User(val relationship: Relationship)
+
+data class User(
+    val number: PhoneNo,
+    val relationship: Relationship
+) {
+    val phoneNo: String
+        get() = number.toString()
+}
 
 enum class Relationship(private val inKorean: String) {
     MOTHER("엄마"),
@@ -29,5 +36,13 @@ enum class Relationship(private val inKorean: String) {
 
     override fun toString(): String {
         return inKorean
+    }
+}
+
+data class PhoneNo(private val rawNumber: String) {
+    private val number = rawNumber.replace("-", "")
+
+    override fun toString(): String {
+        return "${number.substring(0, 3)}-${number.substring(3, 7)}-${number.substring(7, 11)}"
     }
 }

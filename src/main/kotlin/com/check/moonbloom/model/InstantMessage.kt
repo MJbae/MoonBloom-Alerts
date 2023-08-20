@@ -2,7 +2,7 @@ package com.check.moonbloom.model
 
 class InstantMessage(private val honoree: Honoree, private val user: User) {
 
-    fun txt(): String {
+    override fun toString(): String {
         if (honoree.birthdayType == CalendarType.LUNAR) return lunarMsg()
         return gregorianMsg()
     }
