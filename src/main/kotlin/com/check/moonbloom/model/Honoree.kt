@@ -11,7 +11,7 @@ class Honoree(
     val name: String,
     @Embedded
     @AttributeOverrides(
-        AttributeOverride(name = "date", column = Column(name = "date_of_birthday", unique = true)),
+        AttributeOverride(name = "date", column = Column(name = "date_of_birthday")),
         AttributeOverride(name = "type", column = Column(name = "birthday_calendar_type"))
     )
     private val birthday: Birthday,

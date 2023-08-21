@@ -11,8 +11,7 @@ data class Birthday(
     @Enumerated(EnumType.STRING)
     val type: CalendarType
 ) {
-    @Transient
-    private val lunarConverter = KoreanLunarCalendar.getInstance()
+    private fun lunarConverter() = KoreanLunarCalendar.getInstance()
 
     internal fun lunar(): LocalDate {
         if (type == CalendarType.LUNAR) return thisBirthday(date)
@@ -27,13 +26,13 @@ data class Birthday(
     private fun thisBirthday(date: LocalDate) = LocalDate.of(LocalDate.now().year, date.month, date.dayOfMonth)
 
     private fun lunarToGregorian(date: LocalDate): LocalDate {
-        lunarConverter.setLunarDate(date.year, date.month.value, date.dayOfMonth, false)
-        return LocalDate.of(lunarConverter.solarYear, lunarConverter.solarMonth, lunarConverter.solarDay)
+        lunarConverter().setLunarDate(date.year, date.month.value, date.dayOfMonth, false)
+        return LocalDate.of(lunarConverter().solarYear, lunarConverter().solarMonth, lunarConverter().solarDay)
     }
 
     private fun gregorianToLunar(date: LocalDate): LocalDate {
-        lunarConverter.setSolarDate(date.year, date.month.value, date.dayOfMonth)
-        return LocalDate.of(lunarConverter.lunarYear, lunarConverter.lunarMonth, lunarConverter.lunarDay)
+        lunarConverter().setSolarDate(date.year, date.month.value, date.dayOfMonth)
+        return LocalDate.of(lunarConverter().lunarYear, lunarConverter().lunarMonth, lunarConverter().lunarDay)
     }
 }
 

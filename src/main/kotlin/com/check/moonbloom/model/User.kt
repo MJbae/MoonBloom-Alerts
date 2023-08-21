@@ -9,7 +9,7 @@ class User(
     @AttributeOverride(name = "userId", column = Column(name = "userId", unique = true, length = 40))
     val userId: UserId,
     @Embedded
-    @AttributeOverride(name = "number", column = Column(name = "phone_no", unique = true))
+    @AttributeOverride(name = "number", column = Column(name = "phone_no"))
     val number: PhoneNo
 ) {
     @Id
