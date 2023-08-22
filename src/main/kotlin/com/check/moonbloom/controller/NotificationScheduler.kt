@@ -15,7 +15,7 @@ class NotificationScheduler(
     @Scheduled(cron = EVERY_10_AM, zone = KOREA_ZONE)
     fun sendNotification() {
         logger.info("notification scheduler started ${LocalDateTime.now()}")
-        service.send()
+        service.sendForHonorees()
     }
 
     companion object {
