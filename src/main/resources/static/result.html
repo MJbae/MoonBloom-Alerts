@@ -11,13 +11,22 @@
 <div class="container">
     <h1>MoonBloom Alerts</h1>
 
-    <div class="intro">
+    <div class="result">
         <p id="fetchMsg"></p>
         <p>생신 일주일 전에 <span id="fetchPhoneNumber"></span> 번호로 알려드릴게요~</p>
         <a href="/">돌아가기</a>
     </div>
 
 </div>
-<script src="messageScript.js"></script>
+<script>
+    window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('msg');
+    const phoneNo = urlParams.get('phoneNo');
+
+    document.getElementById("fetchMsg").textContent = decodeURIComponent(message);
+    document.getElementById("fetchPhoneNumber").textContent = decodeURIComponent(phoneNo);
+}
+</script>
 </body>
 </html>
