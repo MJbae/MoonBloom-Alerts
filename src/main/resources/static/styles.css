@@ -115,6 +115,10 @@ button:enabled {
   box-shadow: 0px 0px 20px rgba(70, 130, 180, 0.15);
 }
 
+.result-mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
   body {
     padding: 5px;
@@ -152,7 +156,15 @@ button:enabled {
     margin: 5px;
   }
 
+  .result-mobile p {
+    margin: 5px;
+  }
+
   .intro__second {
+    margin-top: 15px;
+  }
+
+  .result__second {
     margin-top: 15px;
   }
 
@@ -181,8 +193,10 @@ button:enabled {
   .output {
     margin-top: 15px;
   }
-
   .result {
+    display: none;
+  }
+  .result-mobile {
     display: block;
     font-size: 16px;
     margin: 10px 0;

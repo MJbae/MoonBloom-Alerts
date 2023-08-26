@@ -1,32 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoonBloom Alerts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-<body>
-<div class="container">
-    <h1>MoonBloom Alerts</h1>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-    <div class="result">
-        <p id="fetchMsg"></p>
-        <p>생신 일주일 전에 <span id="fetchPhoneNumber"></span> 번호로 알려드릴게요~</p>
+  <body>
+    <div class="container">
+      <h1>MoonBloom Alerts</h1>
+      <div class="result">
+        <p>
+          올해 <span class="fetchRelationship"></span>의 생신은 양력으로 보면
+          <span class="fetchBirthday"></span>입니다! 💕
+        </p>
+        <p>
+          생신 일주일 전에 <span class="fetchPhoneNumber"></span> 번호로
+          알려드릴게요~
+        </p>
         <a href="/">돌아가기</a>
+      </div>
+      <div class="result-mobile">
+        <div class="result__first">
+          <p>올해 <span class="fetchRelationship"></span>의 생신은</p>
+          <p>양력으로 보면 <span class="fetchBirthday"></span>입니다💕</p>
+        </div>
+        <div class="result__second">
+          <p>생신 일주일 전에</p>
+          <p><span class="fetchPhoneNumber"></span> 번호로 알려드릴게요~</p>
+        </div>
+        <a href="/">돌아가기</a>
+      </div>
     </div>
 
-</div>
-<script>
-    window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const message = urlParams.get('msg');
-    const phoneNo = urlParams.get('phoneNo');
+    <script>
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const relationship = decodeURIComponent(urlParams.get("relationship"));
+        const gregorianBirthday = decodeURIComponent(
+          urlParams.get("gregorianBirthday")
+        );
+        const phoneNo = decodeURIComponent(urlParams.get("phoneNo"));
 
-    document.getElementById("fetchMsg").textContent = decodeURIComponent(message);
-    document.getElementById("fetchPhoneNumber").textContent = decodeURIComponent(phoneNo);
-}
-</script>
-</body>
+        [...document.getElementsByClassName("fetchRelationship")].forEach(
+          (element) => {
+            element.textContent = relationship;
+          }
+        );
+        [...document.getElementsByClassName("fetchBirthday")].forEach(
+          (element) => {
+            element.textContent = gregorianBirthday;
+          }
+        );
+        [...document.getElementsByClassName("fetchPhoneNumber")].forEach(
+          (element) => {
+            element.textContent = phoneNo;
+          }
+        );
+      };
+    </script>
+  </body>
 </html>

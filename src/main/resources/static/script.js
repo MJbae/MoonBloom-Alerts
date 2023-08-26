@@ -24,35 +24,39 @@ function checkMandatoryFields() {
 document.querySelector("button").disabled = true;
 
 function fetchMessage() {
-  let dob = document.getElementById("dob").value;
-  let relationship = document.getElementById("relationship").value;
-  let phoneNo = document.getElementById("phoneNo").value;
-  let name = document.getElementById("name").value;
+  const phoneNo = document.getElementById("phoneNo").value;
+  const dob = document.getElementById("dob").value;
+  const relationship = document.getElementById("relationship").value;
+  const name = document.getElementById("name").value;
 
-  if (!dob || !relationship || !name || !isValidPhoneNumber(phoneNo)) {
-    alert("모든 필수 입력 사항을 완료해주세요!");
-    return;
-  }
+  const requestData = {
+    phoneNo: phoneNo,
+    dob: new Date(dob),
+    relationship: relationship,
+    name: name,
+  };
 
+  // Assuming you have an endpoint /api/notifications that will process this information
   fetch("/api/notifications", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      dob: dob,
-      relationship: relationship,
-      name: name,
-      phoneNo: phoneNo,
-    }),
+    body: JSON.stringify(requestData),
   })
     .then((response) => response.json())
     .then((data) => {
-      window.location.href = `result.html?msg=${encodeURIComponent(
-        data.msg
-      )}&phoneNo=${encodeURIComponent(data.phoneNo)}`;
+      if (data && data.honoree && data.phoneNo) {
+        window.location.href = `result.html?relationship=${encodeURIComponent(
+          data.honoree.relationship
+        )}&gregorianBirthday=${encodeURIComponent(
+          data.honoree.gregorianBirthday
+        )}&phoneNo=${encodeURIComponent(data.phoneNo)}`;
+      }
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.error("There was an error with the fetch operation:", error);
+      document.getElementById("message").textContent =
+        "An error occurred. Please try again.";
     });
 }
