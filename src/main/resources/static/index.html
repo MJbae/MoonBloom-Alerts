@@ -1,78 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoonBloom Alerts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+      <h1>MoonBloom Alerts</h1>
 
-<div class="container">
-    <h1>MoonBloom Alerts</h1>
-
-    <div class="intro">
+      <div class="intro">
         <p>사랑하는 분의 음력 생일을 올해 양력 날짜로 알려드려요. 🌙✨</p>
         <p>특별한 날을 준비하실 수 있도록 일주일 전에 메시지 드릴게요. 💖</p>
-    </div>
-    <div class="intro-mobile">
+      </div>
+      <div class="intro-mobile">
         <div class="intro__first">
-            <p>사랑하는 분의 음력 생일을</p>
-            <p>올해 양력 날짜로 알려드려요.✨</p>
+          <p>사랑하는 분의 음력 생일을</p>
+          <p>올해 양력 날짜로 알려드려요.✨</p>
         </div>
         <div class="intro__second">
-            <p>특별한 날을 준비하실 수 있도록</p>
-            <p>일주일 전에 메시지 드릴게요.💖</p>
+          <p>특별한 날을 준비하실 수 있도록</p>
+          <p>일주일 전에 메시지 드릴게요.💖</p>
         </div>
-    </div>
+      </div>
 
-
-    <div class="input-group">
+      <div class="input-group">
         <label for="phoneNo">전화번호<span class="required">*</span></label>
-        <input type="tel" id="phoneNo" placeholder="ex) 01012345678" pattern="01[016789]\d{6,8}" title="올바른 전화번호를 입력해주세요.">
-    </div>
+        <input
+          type="tel"
+          id="phoneNo"
+          placeholder="ex) 01012345678"
+          pattern="01[016789]\d{6,8}"
+          title="올바른 전화번호를 입력해주세요."
+        />
+      </div>
 
-    <div class="input-group">
+      <div class="input-group">
         <label for="dob">생년월일<span class="required">*</span></label>
-        <input type="date" id="dob">
-    </div>
+        <input type="date" id="dob" />
+      </div>
 
-    <div class="input-group">
+      <div class="input-group">
         <label for="relationship">관계<span class="required">*</span></label>
         <select id="relationship">
-            <option value="MOTHER">엄마</option>
-            <option value="FATHER">아빠</option>
-            <option value="GRANDMA">할머니</option>
-            <option value="GRANDPA">할아버지</option>
-            <option value="BROTHER">형제</option>
-            <option value="SISTER">자매</option>
-            <option value="UNCLE">삼촌</option>
-            <option value="AUNT">숙모</option>
-            <option value="COUSIN">사촌</option>
-            <option value="OTHER">기타</option>
+          <option value="MOTHER">엄마</option>
+          <option value="FATHER">아빠</option>
+          <option value="GRANDMA">할머니</option>
+          <option value="GRANDPA">할아버지</option>
+          <option value="BROTHER">형제</option>
+          <option value="SISTER">자매</option>
+          <option value="UNCLE">삼촌</option>
+          <option value="AUNT">숙모</option>
+          <option value="COUSIN">사촌</option>
+          <option value="OTHER">기타</option>
         </select>
-    </div>
+      </div>
 
-    <div class="input-group">
+      <div class="input-group">
         <label for="name">이름<span class="required">*</span></label>
-        <input type="text" id="name" placeholder="ex) 김부자">
-    </div>
+        <input type="text" id="name" placeholder="ex) 김부자" />
+      </div>
 
-    <button onclick="fetchMessage()" disabled>완료</button>
+      <button onclick="fetchMessage()" disabled>완료</button>
 
-    <div class="output">
+      <div class="output">
         <p id="message"></p>
+      </div>
     </div>
-</div>
 
-<script src="script.js"></script>
-<script>
-    document.getElementById('dob').value = "1960-01-01";
-</script>
-</body>
-
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("dob").value = "1960-01-01";
+    </script>
+  </body>
 </html>
