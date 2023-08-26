@@ -23,7 +23,8 @@ h1 {
   font-size: 24px;
 }
 
-.intro {
+.intro,
+.result {
   font-size: 18px;
   color: #4682b4;
   text-align: center;
@@ -35,8 +36,16 @@ h1 {
   box-shadow: 0px 0px 20px rgba(70, 130, 180, 0.15);
 }
 
-.intro-mobile {
+.intro-mobile,
+.result-mobile {
   display: none;
+}
+
+.section-label {
+  font-size: 18px;
+  color: #4682b4;
+  margin: 20px 0 4px;
+  font-weight: 500;
 }
 
 .input-group {
@@ -44,6 +53,10 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.receiver {
+  padding-bottom: 5px;
 }
 
 .required {
@@ -103,22 +116,6 @@ button:enabled {
   margin-top: 25px;
 }
 
-.result {
-  font-size: 18px;
-  color: #4682b4;
-  text-align: center;
-  margin: 15px 0;
-  font-weight: 500;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #dcecff;
-  box-shadow: 0px 0px 20px rgba(70, 130, 180, 0.15);
-}
-
-.result-mobile {
-  display: none;
-}
-
 @media only screen and (max-width: 768px) {
   body {
     padding: 5px;
@@ -134,68 +131,12 @@ button:enabled {
     margin-bottom: 10px;
   }
 
-  .intro {
-    display: none;
-  }
-
-  /* Show the mobile intro on mobile */
-  .intro-mobile {
-    display: block;
-    font-size: 16px;
-    margin: 10px 0;
-    padding: 8px;
-    border-radius: 8px;
-    background-color: #dcecff;
-    box-shadow: 0px 0px 20px rgba(70, 130, 180, 0.15);
-    text-align: center;
-    color: #4682b4;
-    font-weight: 500;
-  }
-
-  .intro-mobile p {
-    margin: 5px;
-  }
-
-  .result-mobile p {
-    margin: 5px;
-  }
-
-  .intro__second {
-    margin-top: 15px;
-  }
-
-  .result__second {
-    margin-top: 15px;
-  }
-
-  .input-group {
-    margin-bottom: 10px;
-  }
-
-  label {
-    font-size: 14px;
-    margin-bottom: 4px;
-  }
-
-  input,
-  select {
-    font-size: 14px;
-    height: 35px;
-    padding: 8px 20px 8px 12px;
-  }
-
-  button {
-    font-size: 14px;
-    height: 35px;
-    margin-top: 25px;
-  }
-
-  .output {
-    margin-top: 15px;
-  }
+  .intro,
   .result {
     display: none;
   }
+
+  .intro-mobile,
   .result-mobile {
     display: block;
     font-size: 16px;
@@ -207,5 +148,41 @@ button:enabled {
     text-align: center;
     color: #4682b4;
     font-weight: 500;
+  }
+
+  .intro-mobile p,
+  .result-mobile p {
+    margin: 5px;
+  }
+
+  .section-label {
+    font-size: 16px;
+    margin: 15px 0 2px;
+  }
+
+  .intro__second,
+  .result__second {
+    margin-top: 15px;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+    padding: 8px 20px 8px 10px;
+    height: 35px;
+  }
+
+  button {
+    margin-top: 25px;
+    height: 40px;
+    font-size: 14px;
   }
 }
