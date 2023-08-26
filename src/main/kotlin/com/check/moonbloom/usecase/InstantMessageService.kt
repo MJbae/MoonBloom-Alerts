@@ -24,16 +24,22 @@ class InstantMessageService(
         user.join(honoree)
         userRepository.save(user)
 
-        val message = InstantMessage(honoree)
-
         return MessageDto(
-            msg = message.toString(),
-            phoneNo = user.phoneNoInDash
+            phoneNo = user.phoneNoInDash,
+            honoree = HonoreeDto(
+                relationship = honoree.relationship.toString(),
+                gregorianBirthday = honoree.gregorianBirthday
+            )
         )
     }
 }
 
 data class MessageDto(
-    val msg: String,
+    val honoree: HonoreeDto,
     val phoneNo: String
+)
+
+data class HonoreeDto(
+    val relationship: String,
+    val gregorianBirthday: LocalDate
 )
