@@ -1,9 +1,5 @@
 ## MoonBloom Alerts
 
-### [MoonBloom Alerts 바로가기](https://moonbloom.check-ki.com/)
-
-
-
 ### 개요
 
 **MoonBloom Alerts**는 사랑하는 이들의 음력 생일을 기억하고 축하하는 데 도움을 주는 서비스입니다. 
